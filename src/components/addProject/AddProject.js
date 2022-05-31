@@ -79,6 +79,8 @@ const AddProject = (props) => {
                 proj.preview.push(previews.value);
             }
         })
+        
+        proj.type = +props.type;
 
         return proj;
     }
@@ -97,7 +99,9 @@ const AddProject = (props) => {
                 id = item.id;
                 proj.push(createProj(name, photo, preview, 1));
                 proj.push(createProj(name, photo, preview, 2));
-                proj.push(createProj(name, photo, preview, 3));
+                if (props.type == 1 || props.type == 3) {
+                    proj.push(createProj(name, photo, preview, 3));
+                }
                 newData[i].works.unshift(proj);
                 console.log(newData);
             }
