@@ -79,7 +79,7 @@ const AddProject = (props) => {
                 proj.preview.push(previews.value);
             }
         })
-        
+
         proj.type = +props.type;
 
         return proj;
