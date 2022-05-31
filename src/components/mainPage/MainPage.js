@@ -31,7 +31,7 @@ const MainPage = () => {
         const templates = data.map((item, i) => {
             console.log(item)
             return item.works.map(photo => {
-                return <WorksTemplate key={i} data={photo} type={i % 3 === 0? 3 : i & 3 === 1 ? 2 : 1}/>
+                return <WorksTemplate key={i} data={photo} type={photo[0]?.type ? photo[0]?.type : 1}/>
             })
         })
 
